@@ -97,10 +97,6 @@ Total Cart Price is: $10.3
 Total Cart Price (Including Tax): $11.2012
 ```
 
-**3. Strategy**
-
-Incorporating the strategy design pattern would allow us to sort the restaurants based on the type and the name. 
-
 ## Phase II: OMT Diagrams
 #### Restaurant Prototype Pattern
 ![Restaurant_Prototype](prototype/prototype_pattern.png)
@@ -381,12 +377,7 @@ Price of Big Mac is: $3.99
 Total Cart Price is: $10.47
 Total Cart Price (Including Tax): $11.3861
 ```
-> The input for to receive this result was ```party_name, 1, Xin, 1, 1, 6, 3, 1, 0``` in ```main.cpp```
-
-#### Sort Strategy Pattern
-![Sort Strategy](https://user-images.githubusercontent.com/58233764/99926181-a44c3700-2cf5-11eb-889b-36309dfe1711.png)
-- RestaurantSort Strategy pattern, can let us to corresponding to sorting algorithm operation of the restaurant, such as the restaurant according to the price of ordering (from the highest price to the restaurant to the cheapest to the restaurant）, the restaurant can also be sorted in alphabetical order (from A to Z or from A to Z), algorithm can also be in accordance with the type of restaurant to restaurant for sorting (western food, Mexican food, Chinese food, etc.).
-
+> The input for to receive this result was ```*party_name*, 1, Xin, 1, 1, 6, 3, 1, 0``` in ```main.cpp```
 	
 ## Phase III: Development, Testing, and Scrum Meeting
 ###### Scrum Meeting with Philip Park - Monday, November 23 (11:00am - 2:00pm)
