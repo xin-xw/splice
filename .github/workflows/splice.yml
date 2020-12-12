@@ -1,0 +1,35 @@
+name: SPLICE C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: actions-setup-cmake
+      uses: jwlawson/actions-setup-cmake@v1.4
+    - name: generate makefiles
+      run: cmake .
+    - name: generate test executables
+      run: make
+    - name: cart test executable
+      run: ./c_cart_test
+    - name: fastfood test executable
+      run: ./fastfood_test
+    - name: menu_burger_test executable
+      run: ./menu_burger_test
+    - name: menu_taco_test executable
+      run: ./menu_taco_test
+    - name: menu_pizza_test executable
+      run: ./menu_pizza_test
+    - name: party test executable
+      run: ./c_party_test
