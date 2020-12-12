@@ -377,7 +377,7 @@ Price of Big Mac is: $3.99
 Total Cart Price is: $10.47
 Total Cart Price (Including Tax): $11.3861
 ```
-> The input for to receive this result was ```*party_name*, 1, Xin, 1, 1, 6, 3, 1, 0``` in ```main.cpp```
+> The input for to receive this result was ```"input_any_party_name", 1, Xin, 1, 1, 6, 3, 1, 0``` in ```main.cpp```
 	
 ## Phase III: Development, Testing, and Scrum Meeting
 ###### Scrum Meeting with Philip Park - Monday, November 23 (11:00am - 2:00pm)
@@ -1099,7 +1099,7 @@ Total Cart Price (Including Tax): $4.89375
 ![Screenshot_2](interface/input2.png)
 
 ## Installation/Usage
-To use this project, first clone this repository ```git clone https://github.com/cs100/final-project-joh046-hzhan265-xwang315.git```, then ```cd``` into the repo, configure cmake, and lastly run ```./main```.
+To use this project, first clone this repository ```git clone https://github.com/cs100/final-project-joh046-hzhan265-xwang315.git```, then ```cd``` into the repo, configure cmake (```cmake .```, ```make```), and lastly run ```./main```.
  
 Despite the myriad of testing that we have put our program through, to ensure that the program performs its functionality, we have created a ```main.cpp``` command line executable as a user interface. The sequence within ```main.cpp``` is solely depended on user input; the sequence is as follows:
 1. Ask for a party name
@@ -1109,4 +1109,4 @@ Despite the myriad of testing that we have put our program through, to ensure th
 5. Display the restaurants that fall under the category chosen, and then ask for an input to select the restaurant
 6. Display the restaurant menu, ask for continuous inputs to add items into the user cart
 7. Output cart items and total amount needed to pay
-> * Repeat steps 6 and 7 depending on the party size
+*Repeat steps 6 and 7 depending on the party size*
