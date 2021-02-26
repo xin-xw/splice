@@ -16,7 +16,7 @@ jobs:
       with:
         submodules: recursive
     - name: actions-setup-cmake
-      uses: jwlawson/actions-setup-cmake@v1.4
+      uses: jwlawson/actions-setup-cmake@v1.8
     - name: generate makefiles
       run: cmake .
     - name: generate test executables
