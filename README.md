@@ -1,4 +1,4 @@
-# CS100 SPLICE PROJECT
+# $PLICE PROJECT
 > Authors: [*Xin Wang*](https://github.com/xinwng), [*Jeanette Oh*](https://github.com/jeanetteoh)
 
 ## Phase I: Project Description
