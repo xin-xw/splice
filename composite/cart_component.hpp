@@ -8,7 +8,7 @@ class party_component;
 
 class cart_component
 {
-private:    
+private:
 public:
     virtual void add(cart_component *cc) = 0;
     virtual void add_to_cart(menu_component *mc) = 0;

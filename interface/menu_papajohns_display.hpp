@@ -13,7 +13,7 @@ public:
         //PAPA JOHNS PEPPERONI PIZZA
         menu_component *papajohns_pepperoni_pizza = new menu_items_papajohns(1, "Pepperoni Pizza", "Your choice of crust covered with our signature pizza sauce, real cheese made from mozzarella, and pepperoni. With a pepperoni in almost every bite, it's one of our most popular pizzas.", 14.24);
         //PAPA JOHNS SAUSAGE PIZZA
-        menu_component *papajohns_sausage_pizza = new menu_items_papajohns(2, "Sausage Pizza", "Our signature pizza sauce layered with sausage and real cheese made from mozzarella for a taste you’ll crave. Your choice of crust.",14.24);
+        menu_component *papajohns_sausage_pizza = new menu_items_papajohns(2, "Sausage Pizza", "Our signature pizza sauce layered with sausage and real cheese made from mozzarella for a taste you’ll crave. Your choice of crust.", 14.24);
         //PAPA JOHNS CHEESE PIZZA
         menu_component *papajohns_cheese_pizza = new menu_items_papajohns(3, "Cheese Pizza", "Simple, yet simply delicious. Real cheese made from mozzarella on top of our signature pizza sauce with your choice of crust, then baked to a golden brown. It has just what you want, and nothing you don’t.", 11.99);
         //PAPA JOHNS THE WORKS

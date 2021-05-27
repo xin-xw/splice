@@ -48,20 +48,19 @@ string display_taco_places()
     FastFood_Client i_taco_places;
     i_taco_places.fastfood_taco_run();
     cout << endl;
-    
+
     cout << "Choose a selection from the above restaurants!" << endl;
     int choice = 0;
     cin >> choice;
     int taco_choice = 0;
     string restaurant_name = "";
-    
+
     if (choice == 1)
     {
         menu_tacobell_display i_tacobell;
         i_tacobell.display_tacobells_customer_favorites();
         restaurant_name = "Taco Bell";
         return restaurant_name;
-
     }
     else if (choice == 2)
     {
@@ -95,7 +94,7 @@ string display_pizza_places()
     cin >> choice;
     int pizza_choice = 0;
     string restaurant_name = "";
-    
+
     if (choice == 1)
     {
         menu_dominos_display i_dominos;
@@ -151,20 +150,20 @@ int main()
     {
         cout << "Invalid input! Did you make sure your party is less than the size of 3?" << endl;
         return 0;
-    } 
-    else if(i_party_size == 1)
+    }
+    else if (i_party_size == 1)
     {
         cout << "Give User #1 a name!" << endl;
         cin >> user1;
     }
-    else if(i_party_size == 2)
+    else if (i_party_size == 2)
     {
         cout << "Give User #1 a name!" << endl;
         cin >> user1;
         cout << "Give User 2 a name!" << endl;
         cin >> user2;
-    } 
-    else if(i_party_size == 3)
+    }
+    else if (i_party_size == 3)
     {
         cout << "Give User 1 a name!" << endl;
         cin >> user1;
@@ -211,11 +210,11 @@ int main()
                 condition = false;
                 break;
             }
-            
         }
     }
 
-    if (rest_type == "McDonalds"){
+    if (rest_type == "McDonalds")
+    {
         // BIG MAC
         menu_component *big_mac = new menu_items_mcdonalds(1, "Big Mac", "Mouthwatering perfection starts with two 100% pure beef patties and Big Mac sauce sandwiched between a sesame seed bun. It’s topped off with pickles, crisp shredded lettuce, finely chopped onion and American cheese.", 3.99);
         // MCNUGGETS 4 PIECE
@@ -230,7 +229,7 @@ int main()
         menu_component *fries_medium = new menu_items_mcdonalds(8, "Fries Medium", "Our World Famous Fries® are made with premium potatoes such as the Russet Burbank and the Shepody. With 0g of trans fat per labeled serving, these epic fries are crispy and golden on the outside and fluffy on the inside.", 1.79);
         menu_component *fries_large = new menu_items_mcdonalds(9, "Fries Large", "Our World Famous Fries® are made with premium potatoes such as the Russet Burbank and the Shepody. With 0g of trans fat per labeled serving, these epic fries are crispy and golden on the outside and fluffy on the inside.", 1.89);
 
-        vector<menu_component*> i_mcdonalds_cart;
+        vector<menu_component *> i_mcdonalds_cart;
         i_mcdonalds_cart.push_back(big_mac);
         i_mcdonalds_cart.push_back(mcnuggets_4_piece);
         i_mcdonalds_cart.push_back(mcnuggets_10_piece);
@@ -243,7 +242,7 @@ int main()
         int mcdonalds_item_number = 0;
         int mcdonalds_item_number_1 = 0;
 
-        if(i_party_size == 1)
+        if (i_party_size == 1)
         {
             party_component *i_user1 = new user(user1);
             cart_component *i_user1_cart = new user_cart(i_user1);
@@ -268,7 +267,7 @@ int main()
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
         }
-        else if(i_party_size == 2)
+        else if (i_party_size == 2)
         {
             //USER 1 CART FOR PARTY OF 2
             party_component *i_user1 = new user(user1);
@@ -276,7 +275,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> mcdonalds_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_mcdonalds_cart.at(mcdonalds_item_number - 1));
 
@@ -293,7 +292,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -324,7 +323,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> mcdonalds_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_mcdonalds_cart.at(mcdonalds_item_number - 1));
 
@@ -341,7 +340,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -383,19 +382,19 @@ int main()
             }
             i_user3_cart->add(i_user3_cart_items);
             i_user3_cart->display();
-
         }
     }
-    else if (rest_type == "Chick Fil A"){
+    else if (rest_type == "Chick Fil A")
+    {
         menu_component *chickfila_menu_customer_favorites = new menu_chickfila("Chick-Fil-A's Menu, Customer Favorites", "Following Options are the Most Popular Items at Chick-Fil-A");
         // REGULAR CHICKEN SANDWICH ENTREE
         menu_component *chicken_sandwhich = new menu_items_chickfila(1, "Chicken Sandwich", "A boneless breast of chicken seasoned to perfection, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips. Gluten-free bun or multigrain bun also available at an additional cost.", 4.29);
         //SPICY CHICKEN SANDWICH ENTREE
         menu_component *spicy_chicken_sandwhich = new menu_items_chickfila(2, "Spicy Chicken Sandwich", "A boneless breast of chicken seasoned with a spicy blend of peppers, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips. Gluten-free bun or multigrain bun also available at an additional cost.", 4.65);
         // CHICK FIL A NUGGETS (ORIGINAL) 4 PIECE
-        menu_component *chickfila_nuggets_4_piece = new menu_items_chickfila(3, "Chick-fil-a Nuggets 4 Piece","Bite-sized pieces of boneless chicken breast, seasoned to perfection, freshly-breaded and pressure cooked in 100% refined peanut oil. Available with choice of dipping sauce.", 2.20);
+        menu_component *chickfila_nuggets_4_piece = new menu_items_chickfila(3, "Chick-fil-a Nuggets 4 Piece", "Bite-sized pieces of boneless chicken breast, seasoned to perfection, freshly-breaded and pressure cooked in 100% refined peanut oil. Available with choice of dipping sauce.", 2.20);
         // CHICK FIL A NUGGETS (ORIGINAL) 8 PIECE
-        menu_component *chickfila_nuggets_8_piece = new menu_items_chickfila(4, "Chick-fil-a Nuggets 8 Piece","Bite-sized pieces of boneless chicken breast, seasoned to perfection, freshly-breaded and pressure cooked in 100% refined peanut oil. Available with choice of dipping sauce.", 4.39);
+        menu_component *chickfila_nuggets_8_piece = new menu_items_chickfila(4, "Chick-fil-a Nuggets 8 Piece", "Bite-sized pieces of boneless chicken breast, seasoned to perfection, freshly-breaded and pressure cooked in 100% refined peanut oil. Available with choice of dipping sauce.", 4.39);
         // CHICK FIL A NUGGETS (ORIGINAL) 12 PIECE
         menu_component *chickfila_nuggets_12_piece = new menu_items_chickfila(5, "Chick-fil-a Nuggets 12 Piece", "Bite-sized pieces of boneless chicken breast, seasoned to perfection, freshly-breaded and pressure cooked in 100% refined peanut oil. Available with choice of dipping sauce.", 6.29);
         //WAFFLE FRIES
@@ -406,7 +405,7 @@ int main()
         menu_component *mac_and_cheese_small = new menu_items_chickfila(9, "Mac and Cheese (Small)", "A classic macaroni and cheese recipe featuring a special blend of cheeses including Parmesan, Cheddar, and Romano. Baked in-restaurant to form a crispy top layer of baked cheese.", 2.89);
         menu_component *mac_and_cheese_medium = new menu_items_chickfila(10, "Mac and Cheese (Medium)", "A classic macaroni and cheese recipe featuring a special blend of cheeses including Parmesan, Cheddar, and Romano. Baked in-restaurant to form a crispy top layer of baked cheese.", 3.65);
 
-        vector<menu_component*> i_chickfila_cart;
+        vector<menu_component *> i_chickfila_cart;
         i_chickfila_cart.push_back(chicken_sandwhich);
         i_chickfila_cart.push_back(spicy_chicken_sandwhich);
         i_chickfila_cart.push_back(chickfila_nuggets_4_piece);
@@ -421,9 +420,9 @@ int main()
         int chickfila_item_number = 0;
         int chickfila_item_number_1 = 0;
 
-        if(i_party_size == 1)
+        if (i_party_size == 1)
         {
-            
+
             party_component *i_user1 = new user(user1);
             cart_component *i_user1_cart = new user_cart(i_user1);
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
@@ -447,7 +446,7 @@ int main()
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
         }
-        else if(i_party_size == 2)
+        else if (i_party_size == 2)
         {
             //USER 1 CART FOR PARTY OF 2
             party_component *i_user1 = new user(user1);
@@ -455,7 +454,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> chickfila_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_chickfila_cart.at(chickfila_item_number - 1));
 
@@ -472,7 +471,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -503,7 +502,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> chickfila_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_chickfila_cart.at(chickfila_item_number - 1));
 
@@ -520,7 +519,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -564,7 +563,8 @@ int main()
             i_user3_cart->display();
         }
     }
-    else if (rest_type == "In N Out"){
+    else if (rest_type == "In N Out")
+    {
         menu_component *innouts_menu_customer_favorites = new menu_innout("In-N-Out's Menu, Customer Favorites", "Following Options are the Most Popular Items at In-N-Out");
         // DOUBLE DOUBLE
         menu_component *double_double_burger = new menu_items_innout(1, "Double Double", "Two 100% pure beef patties, hand lettuce, tomato, spread, two slices of american cheese, with or without onions, stacked high on a freshly baked bun.", 3.45);
@@ -585,7 +585,7 @@ int main()
         //SOFT DRINK MEDIUM
         menu_component *soft_drink_medium = new menu_items_innout(10, "Soft Drink (Medium)", "Refreshing selctions include Coca-Cola, Diet Coke, 7UP, Dr. Pepper, Root Beer, Lemonade, Minute Maid Light Lemonade, and Iced Tea ", 1.65);
 
-        vector<menu_component*> i_innout_cart;
+        vector<menu_component *> i_innout_cart;
         i_innout_cart.push_back(double_double_burger);
         i_innout_cart.push_back(cheeseburger);
         i_innout_cart.push_back(hamburger);
@@ -600,9 +600,9 @@ int main()
         int innout_item_number = 0;
         int innout_item_number_1 = 0;
 
-        if(i_party_size == 1)
+        if (i_party_size == 1)
         {
-            
+
             party_component *i_user1 = new user(user1);
             cart_component *i_user1_cart = new user_cart(i_user1);
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
@@ -626,7 +626,7 @@ int main()
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
         }
-        else if(i_party_size == 2)
+        else if (i_party_size == 2)
         {
             //USER 1 CART FOR PARTY OF 2
             party_component *i_user1 = new user(user1);
@@ -634,7 +634,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> innout_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_innout_cart.at(innout_item_number - 1));
 
@@ -651,7 +651,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -682,7 +682,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> innout_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_innout_cart.at(innout_item_number - 1));
 
@@ -699,7 +699,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -742,9 +742,9 @@ int main()
             i_user3_cart->add(i_user3_cart_items);
             i_user3_cart->display();
         }
-
     }
-    else if (rest_type == "Taco Bell"){
+    else if (rest_type == "Taco Bell")
+    {
         menu_component *tacobells_menu_customer_favorites = new menu_tacobell("Taco Bell's Menu, Customer Favorites", "Following Options are the Most Popular Items at Taco Bell");
         // SOFT TACO
         menu_component *soft_taco = new menu_items_tacobell(1, "Soft Taco", "Soft Taco has a warm, flour tortilla with seasoned beef, lettuce, and real cheddar cheese", 1.29);
@@ -767,7 +767,7 @@ int main()
         //DRAGON FRUIT FREEZE
         menu_component *dragon_fruit_freeze = new menu_items_tacobell(10, "Dragon Fruit Freeze", "A sweet, tropical freeze that's almost too pretty to drink", 2.69);
 
-        vector<menu_component*> i_tacobell_cart;
+        vector<menu_component *> i_tacobell_cart;
         i_tacobell_cart.push_back(soft_taco);
         i_tacobell_cart.push_back(crunchy_taco);
         i_tacobell_cart.push_back(nacho_cheese_dorito_locos_taco);
@@ -782,9 +782,9 @@ int main()
         int tacobell_item_number = 0;
         int tacobell_item_number_1 = 0;
 
-        if(i_party_size == 1)
+        if (i_party_size == 1)
         {
-            
+
             party_component *i_user1 = new user(user1);
             cart_component *i_user1_cart = new user_cart(i_user1);
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
@@ -808,7 +808,7 @@ int main()
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
         }
-        else if(i_party_size == 2)
+        else if (i_party_size == 2)
         {
             //USER 1 CART FOR PARTY OF 2
             party_component *i_user1 = new user(user1);
@@ -816,7 +816,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> tacobell_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_tacobell_cart.at(tacobell_item_number - 1));
 
@@ -833,7 +833,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -864,7 +864,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> tacobell_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_tacobell_cart.at(tacobell_item_number - 1));
 
@@ -881,7 +881,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -924,9 +924,9 @@ int main()
             i_user3_cart->add(i_user3_cart_items);
             i_user3_cart->display();
         }
-
     }
-    else if (rest_type == "El Pollo Loco"){
+    else if (rest_type == "El Pollo Loco")
+    {
         menu_component *elpollolocos_menu_customer_favorites = new menu_elpolloloco("El Pollo Loco's Menu, Customer Favorites", "Following Options are the Most Popular Items at El Pollo Loco");
         // CHICKEN AVOCADO TACO
         menu_component *chicken_avocado_taco = new menu_items_elpolloloco(1, "Chicken Avocado Taco", "Fire-grilled chicken, avocado, shredded lettuce, queso fresco, and pico on a handcrafted tortilla and finished with creamy cilantro dressing.", 2.99);
@@ -947,7 +947,7 @@ int main()
         menu_component *drink_regular = new menu_items_elpolloloco(9, "Drink (Regular)", "Refreshing beverage including Coca-cola, Diet Coke, Cherry Coke, Sprite, Dr. Pepper, Strawberry Lemonade, Hi-C Fruit Punch, Fanta Orange, Fuze Raspberry Iced Tea, Passion Fruit Mango Iced Tea, Unsweetened Ice Tea, Barq's Root Beer.", 2.19);
         menu_component *drink_large = new menu_items_elpolloloco(10, "Drink (Large)", "Refreshing beverage including Coca-cola, Diet Coke, Cherry Coke, Sprite, Dr. Pepper, Strawberry Lemonade, Hi-C Fruit Punch, Fanta Orange, Fuze Raspberry Iced Tea, Passion Fruit Mango Iced Tea, Unsweetened Ice Tea, Barq's Root Beer.", 2.39);
 
-        vector<menu_component*> i_elpolloloco_cart;
+        vector<menu_component *> i_elpolloloco_cart;
         i_elpolloloco_cart.push_back(chicken_avocado_taco);
         i_elpolloloco_cart.push_back(chickenless_pollo_taco);
         i_elpolloloco_cart.push_back(california_queso_burrito);
@@ -962,9 +962,9 @@ int main()
         int elpolloloco_item_number = 0;
         int elpolloloco_item_number_1 = 0;
 
-        if(i_party_size == 1)
+        if (i_party_size == 1)
         {
-            
+
             party_component *i_user1 = new user(user1);
             cart_component *i_user1_cart = new user_cart(i_user1);
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
@@ -988,7 +988,7 @@ int main()
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
         }
-        else if(i_party_size == 2)
+        else if (i_party_size == 2)
         {
             //USER 1 CART FOR PARTY OF 2
             party_component *i_user1 = new user(user1);
@@ -996,7 +996,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> elpolloloco_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_elpolloloco_cart.at(elpolloloco_item_number - 1));
 
@@ -1013,7 +1013,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1044,7 +1044,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> elpolloloco_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_elpolloloco_cart.at(elpolloloco_item_number - 1));
 
@@ -1061,7 +1061,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1104,9 +1104,9 @@ int main()
             i_user3_cart->add(i_user3_cart_items);
             i_user3_cart->display();
         }
-
     }
-    else if (rest_type == "Del Taco"){
+    else if (rest_type == "Del Taco")
+    {
         menu_component *deltacos_menu_customer_favorites = new menu_deltaco("Del Taco's Menu, Customer Favorites", "Following Options are the Most Popular Items at Del Taco");
         // THE DEL TACO
         menu_component *the_del_taco = new menu_items_deltaco(1, "The Del Taco", "The Del Taco is inspired by the original and loaded with more of everything you love, like more seasoned beef and more hand-grated cheddar cheese, plus crisp lettuce and chopped fresh tomatoes in a crunchy corn shell or warm flour tortilla.", 1.69);
@@ -1129,7 +1129,7 @@ int main()
         //CHIPS AND QUESO
         menu_component *chips_and_queso = new menu_items_deltaco(10, "Chips & Queso", "Creamy Queso Blanco served with a large bag of fresh, house-made tortilla chips. Great for sharing!", 3.29);
 
-        vector<menu_component*> i_deltaco_cart;
+        vector<menu_component *> i_deltaco_cart;
         i_deltaco_cart.push_back(the_del_taco);
         i_deltaco_cart.push_back(beyond_taco);
         i_deltaco_cart.push_back(al_carbon_taco);
@@ -1144,9 +1144,9 @@ int main()
         int deltaco_item_number = 0;
         int deltaco_item_number_1 = 0;
 
-        if(i_party_size == 1)
+        if (i_party_size == 1)
         {
-            
+
             party_component *i_user1 = new user(user1);
             cart_component *i_user1_cart = new user_cart(i_user1);
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
@@ -1170,7 +1170,7 @@ int main()
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
         }
-        else if(i_party_size == 2)
+        else if (i_party_size == 2)
         {
             //USER 1 CART FOR PARTY OF 2
             party_component *i_user1 = new user(user1);
@@ -1178,7 +1178,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> deltaco_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_deltaco_cart.at(deltaco_item_number - 1));
 
@@ -1195,7 +1195,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1226,7 +1226,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> deltaco_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_deltaco_cart.at(deltaco_item_number - 1));
 
@@ -1243,7 +1243,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1286,12 +1286,12 @@ int main()
             i_user3_cart->add(i_user3_cart_items);
             i_user3_cart->display();
         }
-
     }
-    else if (rest_type == "Pizza Hut"){
+    else if (rest_type == "Pizza Hut")
+    {
         menu_component *pizzahuts_menu_customer_favorites = new menu_pizzahut("Pizza Hut's Menu, Customer Favorites", "Following Options are the Most Popular Items at Pizza Hut");
         //CHEESE PIZZA
-        menu_component *cheese_pizza = new menu_items_pizzahut(1, "Cheese Pizza", "Your favorite cheese pizza, with your choice of crust covered in classic marinara sauce and topped with gooey mozzarella cheese. It's anything but 'plain'.",13.99);
+        menu_component *cheese_pizza = new menu_items_pizzahut(1, "Cheese Pizza", "Your favorite cheese pizza, with your choice of crust covered in classic marinara sauce and topped with gooey mozzarella cheese. It's anything but 'plain'.", 13.99);
         //PEPPERONI PIZZA
         menu_component *pepperoni_pizza = new menu_items_pizzahut(2, "Pepperoni Pizza", "You literally can't go wrong with pepperoni and mozzarella cheese. Classic for a reason.", 15.99);
         //MEAT LOVERS PIZZA
@@ -1311,7 +1311,7 @@ int main()
         //PEPPERONI LOVERS PIZZA
         menu_component *pepperoni_lovers_pizza = new menu_items_pizzahut(10, "Pepperoni Lover's Pizza", "Ever wished your pepperoni pizza had more pepperoni? Of course you did. This oven-hot pizza has 50% more pepperoni than our average pizza pie.", 18.99);
 
-        vector<menu_component*> i_pizzahut_cart;
+        vector<menu_component *> i_pizzahut_cart;
         i_pizzahut_cart.push_back(cheese_pizza);
         i_pizzahut_cart.push_back(pepperoni_pizza);
         i_pizzahut_cart.push_back(meat_lovers_pizza);
@@ -1326,9 +1326,9 @@ int main()
         int pizzahut_item_number = 0;
         int pizzahut_item_number_1 = 0;
 
-        if(i_party_size == 1)
+        if (i_party_size == 1)
         {
-            
+
             party_component *i_user1 = new user(user1);
             cart_component *i_user1_cart = new user_cart(i_user1);
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
@@ -1352,7 +1352,7 @@ int main()
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
         }
-        else if(i_party_size == 2)
+        else if (i_party_size == 2)
         {
             //USER 1 CART FOR PARTY OF 2
             party_component *i_user1 = new user(user1);
@@ -1360,7 +1360,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> pizzahut_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_pizzahut_cart.at(pizzahut_item_number - 1));
 
@@ -1377,7 +1377,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1408,7 +1408,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> pizzahut_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_pizzahut_cart.at(pizzahut_item_number - 1));
 
@@ -1425,7 +1425,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1468,9 +1468,9 @@ int main()
             i_user3_cart->add(i_user3_cart_items);
             i_user3_cart->display();
         }
-
     }
-    else if (rest_type == "Dominos"){
+    else if (rest_type == "Dominos")
+    {
         menu_component *dominos_menu_customer_favorites = new menu_dominos("Dominos' Menu, Customer Favorites", "Following Options are the Most Popular Items at Dominos");
         // EXTRAVAGANZZA
         menu_component *extravaganzza_pizza = new menu_items_dominos(1, "ExtravaganZZa (Large)", "The ExtravaganZZa includes pepperoni, ham, Italian sausage, beef, fresh onions, fresh green peppers, fresh mushrooms and black olives, all sandwiched between two layers of cheese made with 100% real mozzarella.", 19.99);
@@ -1493,7 +1493,7 @@ int main()
         //CHEESEBURGER PIZZA
         menu_component *cheeseburger_pizza = new menu_items_dominos(10, "Cheeseburger Pizza (Large)", "The Cheeseburger pizza includes American cheese, ketchup-mustard sauce, beef, fresh onions, and diced tomatoes, topped with shredded provolone and cheddar cheeses.", 19.99);
 
-        vector<menu_component*> i_dominos_cart;
+        vector<menu_component *> i_dominos_cart;
         i_dominos_cart.push_back(extravaganzza_pizza);
         i_dominos_cart.push_back(meatzza_pizza);
         i_dominos_cart.push_back(pacific_veggie_pizza);
@@ -1508,9 +1508,9 @@ int main()
         int dominos_item_number = 0;
         int dominos_item_number_1 = 0;
 
-        if(i_party_size == 1)
+        if (i_party_size == 1)
         {
-            
+
             party_component *i_user1 = new user(user1);
             cart_component *i_user1_cart = new user_cart(i_user1);
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
@@ -1534,7 +1534,7 @@ int main()
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
         }
-        else if(i_party_size == 2)
+        else if (i_party_size == 2)
         {
             //USER 1 CART FOR PARTY OF 2
             party_component *i_user1 = new user(user1);
@@ -1542,7 +1542,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> dominos_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_dominos_cart.at(dominos_item_number - 1));
 
@@ -1559,7 +1559,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1590,7 +1590,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> dominos_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_dominos_cart.at(dominos_item_number - 1));
 
@@ -1607,7 +1607,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1650,14 +1650,14 @@ int main()
             i_user3_cart->add(i_user3_cart_items);
             i_user3_cart->display();
         }
-
     }
-    else if (rest_type == "Papa John's"){
+    else if (rest_type == "Papa John's")
+    {
         menu_component *papajohns_menu_customer_favorites = new menu_papajohns("Papa John's Menu, Customer Favorites", "Following Options are the Most Popular Items at Papa John's");
         //PAPA JOHNS PEPPERONI PIZZA
         menu_component *papajohns_pepperoni_pizza = new menu_items_papajohns(1, "Pepperoni Pizza", "Your choice of crust covered with our signature pizza sauce, real cheese made from mozzarella, and pepperoni. With a pepperoni in almost every bite, it's one of our most popular pizzas.", 14.24);
         //PAPA JOHNS SAUSAGE PIZZA
-        menu_component *papajohns_sausage_pizza = new menu_items_papajohns(2, "Sausage Pizza", "Our signature pizza sauce layered with sausage and real cheese made from mozzarella for a taste you’ll crave. Your choice of crust.",14.24);
+        menu_component *papajohns_sausage_pizza = new menu_items_papajohns(2, "Sausage Pizza", "Our signature pizza sauce layered with sausage and real cheese made from mozzarella for a taste you’ll crave. Your choice of crust.", 14.24);
         //PAPA JOHNS CHEESE PIZZA
         menu_component *papajohns_cheese_pizza = new menu_items_papajohns(3, "Cheese Pizza", "Simple, yet simply delicious. Real cheese made from mozzarella on top of our signature pizza sauce with your choice of crust, then baked to a golden brown. It has just what you want, and nothing you don’t.", 11.99);
         //PAPA JOHNS THE WORKS
@@ -1675,7 +1675,7 @@ int main()
         //PAPA JOHNS TUSCAN SIX CHEESE
         menu_component *papajohns_tuscan_six_cheese = new menu_items_papajohns(10, "Tuscan Six Cheese", "Experience the authentic taste of Italy! Layered with signature pizza sauce and an authentic blend of Parmesan, Romano, Asiago, Fontina, provolone, and real cheese made from mozzarella. Baked hot and fresh then finished with classic Italian seasoning.", 17.99);
 
-        vector<menu_component*> i_papajohns_cart;
+        vector<menu_component *> i_papajohns_cart;
         i_papajohns_cart.push_back(papajohns_pepperoni_pizza);
         i_papajohns_cart.push_back(papajohns_sausage_pizza);
         i_papajohns_cart.push_back(papajohns_cheese_pizza);
@@ -1690,9 +1690,9 @@ int main()
         int papajohns_item_number = 0;
         int papajohns_item_number_1 = 0;
 
-        if(i_party_size == 1)
+        if (i_party_size == 1)
         {
-            
+
             party_component *i_user1 = new user(user1);
             cart_component *i_user1_cart = new user_cart(i_user1);
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
@@ -1716,7 +1716,7 @@ int main()
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
         }
-        else if(i_party_size == 2)
+        else if (i_party_size == 2)
         {
             //USER 1 CART FOR PARTY OF 2
             party_component *i_user1 = new user(user1);
@@ -1724,7 +1724,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> papajohns_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_papajohns_cart.at(papajohns_item_number - 1));
 
@@ -1741,7 +1741,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1772,7 +1772,7 @@ int main()
             cout << "For " << user1 << ", what would you like to add to their cart?" << endl;
             cout << "Please enter the item number from the restaurant you have selected." << endl;
             cout << "After all items have been added, press '0'." << endl;
-            
+
             cin >> papajohns_item_number;
             cart_component *i_user1_cart_items = new cart_items(i_papajohns_cart.at(papajohns_item_number - 1));
 
@@ -1789,7 +1789,7 @@ int main()
             }
             i_user1_cart->add(i_user1_cart_items);
             i_user1_cart->display();
-            
+
             //USER 2 CART FOR PARTY OF 2
             party_component *i_user2 = new user(user2);
             cart_component *i_user2_cart = new user_cart(i_user2);
@@ -1832,12 +1832,11 @@ int main()
             i_user3_cart->add(i_user3_cart_items);
             i_user3_cart->display();
         }
-
     }
-    else{
+    else
+    {
         cout << "THERE IS AN ERROR MF IN REST TYPE LOOP" << endl;
     }
-
 
     return 0;
 }

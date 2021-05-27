@@ -9,10 +9,10 @@ void FastFood_Display::display_interface()
           << endl;
 
      cout << "Please Select a Restaurant Category\n1. Burger Places\n2. Taco Places\n3. Pizza Places" << endl;
-     
+
      bool check = true;
      while (check)
-     {    
+     {
           string base_user_option;
           cin >> base_user_option;
 
@@ -40,7 +40,6 @@ void FastFood_Display::display_interface()
                {
                     cout << "Invalid Input" << endl;
                }
-               
           }
      }
 }
@@ -54,12 +53,13 @@ void FastFood_Display::display_burger_places()
      BurgerPlaces.fastfood_burger_run();
      cout << endl;
 
-     cout << "Please Select a Burger Place: " << endl << endl;
+     cout << "Please Select a Burger Place: " << endl
+          << endl;
      int choice;
      cin >> choice;
      switch (choice)
      {
-          case 1:
+     case 1:
           menu_mcdonalds_display m_1;
           m_1.display_mcdonalds_customer_favorites();
      }
